@@ -1,0 +1,34 @@
+// proto/hello.proto
+syntax = "proto3";
+
+package hello;
+
+option go_package = "github.com/MqArrr/protos/proto;hello";
+
+// Определение gRPC сервиса
+service Greeter {
+  // Метод, который сервер будет реализовывать
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+// Сообщение запроса
+message HelloRequest {
+  string name = 1;
+}
+
+// Сообщение ответа
+message HelloResponse {
+  string message = 1;
+}
+
+message LoginResponse {
+  string token = 1; // Auth token of the logged in user.
+}
+
+message LogoutRequest {
+  string token = 1; // Auth token of the user to logout.
+}
+
+message LogoutResponse {
+  bool success = 1; // Indicates whether the logout was successful.
+}
