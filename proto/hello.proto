@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package hello;
 
-option go_package = "github.com/MqArrr/protos/proto;hello";
+option go_package = "/sso;sso";
 
 // Определение gRPC сервиса
 service Greeter {
